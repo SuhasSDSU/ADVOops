@@ -1,4 +1,4 @@
-package edu.sdsu.directImplementation;
+package edu.sdsu.Trie;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,22 +34,30 @@ public class Node {
         return children;
     }
 
-    public void setChildren(List<Node> children) {
-        this.children = children;
-    }
-
+    /**
+     *
+     * @param depthIndicator -- Starting from the root Node to search each character
+     *                       provided in the search method
+     * @return String -- returns the string if found
+     */
     public String printTree(String depthIndicator) {
-        String str = "";
+        String resultString = "";
         String positionStr = position > -1 ? "{" + String.valueOf(position) + "}" : "";
-        str += depthIndicator + text + positionStr + "\n";
+        resultString += depthIndicator + text + positionStr + "\n";
 
+        StringBuilder stringBuilder = new StringBuilder(resultString);
         for (int i = 0; i < children.size(); i++) {
-            str += children.get(i)
-                    .printTree(depthIndicator + "\t");
+            stringBuilder.append(children.get(i)
+                    .printTree(depthIndicator + "\t"));
         }
-        return str;
+        resultString = stringBuilder.toString();
+        return resultString;
     }
 
+    /**
+     * Overriding to use this in the print statement
+     * @return String -- Provide the Trie
+     */
     @Override
     public String toString() {
         return printTree("");
