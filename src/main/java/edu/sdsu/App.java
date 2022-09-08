@@ -14,6 +14,9 @@ import edu.sdsu.Trie.SuffixTrie;
 import java.util.List;
 
 public class App {
+    /**
+     * Driver Code
+     */
     public static void main(String[] args){
         SuffixTrie suffixTrie = new SuffixTrie("apples");
         System.out.println(suffixTrie.printTree());

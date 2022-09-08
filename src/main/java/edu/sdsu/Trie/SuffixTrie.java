@@ -224,7 +224,7 @@ public class SuffixTrie {
                 nodes.add(currentNode);
                 if (pattern.length() > compareLength) {
                     /**
-                     * But if pattern length is greater than perform
+                     * But if pattern length is greater then perform
                      * Recursive search on the child Nodes
                      */
                     List<Node> nodes2 = getAllNodes(pattern.substring(compareLength), currentNode, isAllowPartialMatch);
