@@ -1,5 +1,6 @@
 /**
  * @author: Suhas Pindiproli
+ * RedId: 824816168
  * Problem Statement:
  * Implement Trie with following functionality
  * 1) Insert String
@@ -11,19 +12,20 @@ package edu.sdsu;
 
 
 import edu.sdsu.Trie.SuffixTrie;
+
 import java.util.List;
 
 public class App {
-    /**
-     * Driver Code
-     */
-    public static void main(String[] args){
-        SuffixTrie suffixTrie = new SuffixTrie("apples");
-        System.out.println(suffixTrie.printTree());
-        List<String> result = suffixTrie.searchText("les");
-        if(result.size() == 0){
-            result.add("No Elements Found");
-        }
-        System.out.println(result);
-    }
+   /**
+    * Driver Code
+    */
+   public static void main(String[] args) {
+      SuffixTrie suffixTrie = new SuffixTrie("apples");
+      System.out.println(suffixTrie.printTree());
+      List<String> result = suffixTrie.searchText("les");
+      if (result.size() == 0) {
+         result.add("No Elements Found");
+      }
+      System.out.println(result);
+   }// end of main
 }
